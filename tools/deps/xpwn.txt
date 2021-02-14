@@ -1,1 +1,0 @@
-cmake build-essential libcrypt-dev libz-dev libbz2-dev
