@@ -1,0 +1,25 @@
+From ecc90f4a1a92eefaaac1b146cb392530832d809a Mon Sep 17 00:00:00 2001
+From: newhacker1746 <danielcrodriguez2012@gmail.com>
+Date: Sun, 14 Feb 2021 18:46:36 -0500
+Subject: [PATCH] fix pedantic order of compile options
+
+---
+ Makefile | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/Makefile b/Makefile
+index 162fcab..398baa5 100644
+--- a/Makefile
++++ b/Makefile
+@@ -8,7 +8,7 @@ GCC_BASE = $(GCC_BIN) -Os $(CFLAGS) -Wimplicit -I ./includes/
+ all: xpwntool
+ 
+ xpwntool: xpwntool.c img3.o img2.o abstractfile.o nor_files.o libxpwn.o lzssfile.o lzss.o
+-	$(GCC_UNIVERSAL) -std=gnu99 -lcrypto -lz -o $@ $^
++	$(GCC_UNIVERSAL) -std=gnu99 -o $@ $^ -lz -lcrypto
+ 
+ %.o: %.c
+ 	$(GCC_UNIVERSAL) -c -o $@ $< 
+-- 
+2.25.1
+
