@@ -1,0 +1,1 @@
+build_ramdisk.sh device_check.sh dfu_helper.sh patch_ibec.sh
